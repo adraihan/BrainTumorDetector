@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+  <title>Brain Tumor</title>
+  <style>
+  body {
+    font-family: helvetica;
+    margin: 0;
+    position: relative;
+    min-height: 600px;
+    text-align: center;
+    font-size: 100%;
+    color: #3e4651;
+  }
+
+  .welcome {
+    padding: 4em 1em;
+    background-color: #00b5b5;
+  }
+  .welcome h1 {
+    margin: 0.5em 0;
+    font-size: 3em;
+    color: #fff;
+  }
+  .welcome .btn {
+    background-color: transparent;
+    border: 3px solid #fff;
+    padding: 0.5em 2em;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+  }
+  .welcome .btn:hover {
+    background-color: #fff;
+    color: #00b5b5;
+  }
+
+  .content {
+    padding: 2em 1em;
+  }
+  .content .btn {
+    background-color: transparent;
+    border: 3px solid #f1654c;
+    padding: 0.5em 2em;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    color: #f1654c;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+  }
+
+  #form {
+    position: absolute;
+    padding: 4em 1em;
+    box-sizing: border-box;
+    display: none;
+    color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #3e4651;
+  }
+  #form h2 {
+    font-size: 2em;
+    margin: 0.5em;
+  }
+  #form .btn {
+    position: absolute;
+    top: 2em;
+    right: 3em;
+    background-color: transparent;
+    border: 0;
+    color: #768395;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    outline: none;
+  }
+  #form .btn:hover {
+    color: #fff;
+  }
+  #form .btn:after {
+    content: "+";
+    color: #fff;
+    display: inline-block;
+    position: absolute;
+    top: -0.33em;
+    right: -0.8em;
+    font-size: 2.4em;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  #form input[type=number] {
+    color: #3b3b3b;
+    border-top: 0px solid #fff;
+    border-right: 0px solid #fff;
+    border-left: 0px solid #fff;
+    border-bottom: 2px solid #3e4651;
+    padding: 0.3em 1em;
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+  #form input[type=submit] {
+    background-color: transparent;
+    border: 3px solid #f1654c;
+    padding: 0.5em 2em;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    margin-top: 40px;
+  }
+  #form input[type=submit]:hover {
+    background-color: #f1654c;
+    color: #fff;
+  }
+  #form input[type=text]:hover {
+    background-color: #f1654c;
+    color: rgb(255, 255, 255);
+  }
+  @media only screen and (max-width: 600px) {
+  .welcome h1 {
+    margin: 0.5em 0;
+    font-size: 3em;
+    color: #fff;
+  }
+  .welcome{
+    padding-bottom: 60px;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <div class="welcome">
+        <img src="{{url_for('static', filename='brain.svg')}}" style="width: 80px;"/>
+        <h1 class="fade">BRAIN TUMOR DETECTION</h1>
+        <button type="button" class="fade show btn">Start</button>
+      </div>
+      
+      <div class="content">
+        <p>Brain Tumor Detection</p>
+        <p>Using Machine Learning with Logistic Regression Algorithm</p>
+        <p>Python 3.7.2 | Flask 2.0.1</p>
+      </div>
+    </div>
+    
+    <div id="form">
+      <h2>
+        Fill all the form !
+      </h2>
+      <form method="POST", action="{{url_for('home')}}">
+        <div>
+          <input type="number" step="0.01" name="a" placeholder="Mean">
+          <input type="number" step="0.01" name="b" placeholder="Variance">
+          <input type="number" step="0.01" name="c" placeholder="Standard Deviation">
+        </div>
+        <div>
+          <input type="number" step="0.01" name="d" placeholder="Entropy">
+          <input type="number" step="0.01" name="e" placeholder="Skewness">
+          <input type="number" step="0.01" name="f" placeholder="Kurtosis">
+        </div>
+        <div>
+          <input type="number" step="0.01" name="g" placeholder="Contrast">
+          <input type="number" step="0.01" name="h" placeholder="Energy">
+          <input type="number" step="0.01" name="i" placeholder="ASM">
+        </div>
+        <div>
+          <input type="number" step="0.01" name="j" placeholder="Homogeneity">
+          <input type="number" step="0.01" name="k" placeholder="Dissimilarity">
+          <input type="number" step="0.01" name="l" placeholder="Correlation">
+        </div>
+        <div>
+          <input type="number" step="0.01" name="m" placeholder="Coarseness">
+          <input type="number" step="0.01" placeholder="Python 3.7.2" disabled>
+          <input type="number" step="0.01" placeholder="Flask 2.0.1" disabled>
+        </div>
+        <input type="submit", value="Predict">
+      </form>
+      <button class="btn close">Close</button>
+    </div>
+  </body>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+  <script script language="JavaScript" type="text/javascript">
+    $(document).ready(function(){
+    var formHeight = $('.welcome').outerHeight();
+    var welcomeHeight = $('.welcome').height();
+    // Create function to have matched heights
+    function getFormHeight(){
+      $('.welcome').css("height", welcomeHeight);
+      $('#form').css("min-height", formHeight);
+    }
+   
+   function changeWelcomeHeight(){
+      var newWelcomeHeight = $('#form').height();
+    }
+   
+   // Run our function to get heights
+   getFormHeight();
+   
+   // Fade and Show elements when 'share your ideas' button clicked
+    $('.show').on('click', function(){
+    $('.fade').fadeOut("slow");
+    $('#form').delay(300).fadeIn("slow");
+    });
+   
+   // Fade and Show elements when 'close' button clicked
+    $('.close').on('click', function(){
+    $('#form').fadeOut("slow");
+    $('.fade').fadeIn("slow");
+    });
+   
+    $( window ).resize(function() {
+    if ( $('#form').css('display') != 'none' ) {
+    changeWelcomeHeight();
+    }
+    });
+    }); 
+  </script>
+</html>

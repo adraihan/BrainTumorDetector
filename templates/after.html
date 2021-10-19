@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+  <title>Brain Tumor</title>
+    <style>
+         body {
+    font-family: helvetica;
+    margin: 0;
+    position: relative;
+    min-height: 600px;
+    text-align: center;
+    font-size: 100%;
+    color: #3e4651;
+  }
+
+  .welcome {
+    padding: 4em 1em;
+    background-color: #59c943;
+  }
+  .welcome-p {
+    padding: 4em 1em;
+    background-color: #c94343;
+  }
+  .welcome h1 {
+    margin: 0.5em 0;
+    font-size: 3em;
+    color: #fff;
+  }
+  .welcome-p h1 {
+    margin: 0.5em 0;
+    font-size: 3em;
+    color: #fff;
+  }
+  .welcome .btn {
+    background-color: transparent;
+    border: 3px solid #fff;
+    padding: 0.5em 2em;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+  }
+  .welcome-p .btn {
+    background-color: transparent;
+    border: 3px solid #fff;
+    padding: 0.5em 2em;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+  }
+  .welcome .btn:hover {
+    background-color: #fff;
+    color: #00b5b5;
+  }
+  .welcome-p .btn:hover {
+    background-color: #fff;
+    color: #00b5b5;
+  }
+
+  .content {
+    padding: 2em 1em;
+  }
+  .content .btn {
+    background-color: transparent;
+    border: 3px solid #f1654c;
+    padding: 0.5em 2em;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    color: #f1654c;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+  }
+    </style>
+  </head>
+  <body>
+    {%if data == 0%}
+    <div id="content">
+        <div class="welcome">
+          <img src="{{url_for('static', filename='brain_negative.svg')}}" style="width: 80px;"/>
+          <h1 class="fade">RESULT : NEGATIVE</h1>
+          <a href="/"><button type="button" class="fade show btn">Back</button></a>
+        </div>
+        
+        <div class="content">
+          <p>Brain Tumor Detection</p>
+          <p>Using Machine Learning with Logistic Regression Algorithm</p>
+          <p>Python 3.7.2 | Flask 2.0.1</p>
+        </div>
+      </div>
+
+    {%else%}
+    <div id="content">
+        <div class="welcome-p">
+          <img src="{{url_for('static', filename='brain_positive.svg')}}" style="width: 80px;"/>
+          <h1 class="fade">RESULT : POSITIVE</h1>
+          <a href="/"><button type="button" class="fade show btn">Back</button></a>
+        </div>
+        
+        <div class="content">
+          <p>Brain Tumor Detection</p>
+          <p>Using Machine Learning with Logistic Regression Algorithm</p>
+          <p>Python 3.7.2 | Flask 2.0.1</p>
+        </div>
+      </div>
+
+    {%endif%}
+    
+
+  </body>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+</html>
